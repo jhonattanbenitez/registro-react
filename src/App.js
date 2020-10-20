@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HomePage from "./pages/homepage/homepage.component";
+import { Route, Switch } from "react-router-dom";
+
+import "./App.css";
+
+const WebPage = () => (
+  <div>
+    <h1>web Page</h1>
+  </div>
+);
+
+const Tecnipapel = () => (
+  <div>
+    <h1>Tecnipapel</h1>
+    <div>ddfdff</div>
+  </div>
+);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/webpage" component={WebPage} />
+        <Route path="/tecnipapel" component={Tecnipapel} />
+      </Switch>
     </div>
   );
 }
